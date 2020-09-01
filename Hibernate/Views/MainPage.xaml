@@ -4,21 +4,24 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Hibernate.MainPage"
-			 BackgroundImageSource="bg.jpg">
+             x:Class="Hibernate.MainPage">
 
-	<StackLayout>
-		<Frame Style="{StaticResource Frame}">
-			<StackLayout HorizontalOptions="CenterAndExpand" Spacing="20"  Padding="5,30">
-				<Label Text="If I go to bed right now, when should I wake up?" Style="{StaticResource MainLabel}"/>
-				<Button Style="{StaticResource MainButton}" Text="Going to bed now" Clicked="BedNowButton_Clicked" />
-				<ContentView Margin="50"/>
-				<Label Text="I need to wake up at a certain time. When should I go to bed?" Style="{StaticResource MainLabel}"/>
-				<Button Style="{StaticResource MainButton}" Text="Pick a time" Clicked="WakeUpButton_Clicked" />
-			</StackLayout>
-			
-		</Frame>
-        
+    <StackLayout>
+        <Grid>
+            <Image Source="bg.jpg" Aspect="AspectFill" />
+
+            <Frame Style="{StaticResource Frame}">
+                <StackLayout HorizontalOptions="CenterAndExpand" Spacing="20"  Padding="5,30">
+                    <Label Text="If I go to bed right now, when should I wake up?" Style="{StaticResource MainLabel}"/>
+                    <Button Style="{StaticResource MainButton}" Text="Going to bed now" Clicked="BedNowButton_Clicked" />
+                    <ContentView Margin="50"/>
+                    <Label Text="I need to wake up at a certain time. When should I go to bed?" Style="{StaticResource MainLabel}"/>
+                    <Button Style="{StaticResource MainButton}" Text="Pick a time" Clicked="WakeUpButton_Clicked" />
+                </StackLayout>
+
+            </Frame>
+
+        </Grid>
     </StackLayout>
 
 </ContentPage>

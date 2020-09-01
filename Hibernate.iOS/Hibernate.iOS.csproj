@@ -129,8 +129,15 @@
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Hibernate\Hibernate.csproj">
-      <Project>{36325A00-36F3-4B9E-ADCB-1E3BBDAAA6AA}</Project>
+      <Project>{4B3782E4-D1F4-47BC-8916-9266C71BC197}</Project>
       <Name>Hibernate</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bg.jpg">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateGeneratedFiles</Generator>
+    </BundleResource>
+    <BundleResource Include="Resources\baseline_close_white_18dp.png" />
   </ItemGroup>
 </Project>

@@ -7,13 +7,20 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace Hibernate.Views {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class BedNowView : ContentPage {
-		public BedNowView() {
-			InitializeComponent();
-		}
+namespace Hibernate.Views
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class BedNowView : ContentPage
+    {
+        public BedNowView()
+        {
+            InitializeComponent();
+        }
 
+        void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            Navigation.PopModalAsync(true);
+        }
 
-	}
+    }
 }

@@ -4,29 +4,33 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Hibernate.ViewModels"
 			 mc:Ignorable="d"
-             x:Class="Hibernate.Views.BedNowView"
-			 BackgroundImageSource="bg.jpg">
-	<ContentPage.BindingContext>
-		<local:BedNowViewModel />
-	</ContentPage.BindingContext>
-	
-	<ContentPage.Content>
-		<Frame Style="{StaticResource Frame}">
-			<StackLayout Spacing="20">
-				<Label Style="{StaticResource MainLabel}" Text="It takes about 14 minutes on average for a person to fall asleep." />
-				<Label Style="{StaticResource MainLabel}" Text="If I go to bed right now, I should wake up at..." />
-				<ListView ItemsSource="{Binding Times}" HasUnevenRows="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsEnabled="False">
-					<ListView.ItemTemplate>
-						<DataTemplate>
-							<ViewCell Height="50">
-								<Label Text="{Binding .}" TextColor="{StaticResource LightBlue}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
-							</ViewCell>
-						</DataTemplate>
-					</ListView.ItemTemplate>
-				</ListView>
-				
-				<Button Style="{StaticResource MainButton}" Text="Calculate" Command="{Binding CalculateCommand}"/>
-			</StackLayout>
-		</Frame>
-	</ContentPage.Content>
+             x:Class="Hibernate.Views.BedNowView">
+    <ContentPage.BindingContext>
+        <local:BedNowViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <Grid>
+            <Image Source="bg.jpg" Aspect="AspectFill"/>
+            <Button Margin="5, 20, 0, 0" ImageSource="baseline_close_white_18dp.png" VerticalOptions="Start" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" Clicked="Button_Clicked"/>
+            <Frame Style="{StaticResource Frame}">
+
+                <StackLayout Spacing="20">
+                    <Label Style="{StaticResource MainLabel}" Text="It takes about 14 minutes on average for a person to fall asleep." />
+                    <Label Style="{StaticResource MainLabel}" Text="If I go to bed right now, I should wake up at..." />
+                    <ListView ItemsSource="{Binding Times}" BackgroundColor="Transparent" HasUnevenRows="True" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsEnabled="False">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell Height="50">
+                                    <Label Text="{Binding .}" TextColor="{StaticResource LightBlue}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+
+                    <Button Style="{StaticResource MainButton}" Text="Calculate" Command="{Binding CalculateCommand}"/>
+                </StackLayout>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
