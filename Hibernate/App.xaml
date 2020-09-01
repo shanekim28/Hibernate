@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="Hibernate.App">
+    <Application.Resources>
+		<ResourceDictionary>
+			<Color x:Key="DarkPurple">#111227</Color>
+			<Color x:Key="Purple">#272652</Color>
+			<Color x:Key="Navy">#2e457d</Color>
+			<Color x:Key="LightBlue">#82a0b9</Color>
+			<Color x:Key="SkyBlue">#b2d0d9</Color>
+
+			<Style x:Key="MainLabel" TargetType="Label">
+				<Setter Property="HorizontalTextAlignment" Value="Center" />
+				<Setter Property="TextColor" Value="{StaticResource SkyBlue}" />
+			</Style>
+
+			<Style x:Key="MainButton" TargetType="Button">
+				<Setter Property="BackgroundColor" Value="{StaticResource SkyBlue}"/>
+				<Setter Property="WidthRequest" Value="150"/>
+				<Setter Property="Padding" Value="0"/>
+				<Setter Property="HorizontalOptions" Value="Center"/>
+				<Setter Property="TextColor" Value="{StaticResource Navy}"/>
+			</Style>
+
+			<Style x:Key="Frame" TargetType="Frame">
+				<Setter Property="CornerRadius" Value="10"/>
+				<Setter Property="BackgroundColor" Value="{StaticResource Purple}"/>
+				<Setter Property="HorizontalOptions" Value="Center"/>
+				<Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+				<Setter Property="Margin" Value="50" />
+			</Style>
+		</ResourceDictionary>
+    </Application.Resources>
+</Application>

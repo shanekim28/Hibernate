@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:local="clr-namespace:Hibernate.ViewModels"
+			 mc:Ignorable="d"
+             x:Class="Hibernate.Views.WakeUpView"
+			 BackgroundImageSource="bg.jpg">
+	<ContentPage.BindingContext>
+		<local:WakeUpViewModel />
+	</ContentPage.BindingContext>
+	
+	<ContentPage.Content>
+		<Frame Style="{StaticResource Frame}">
+			<Grid RowSpacing="20">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="50"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="50"/>
+				</Grid.RowDefinitions>
+
+				<Label Style="{StaticResource MainLabel}" Text="I need to wake up at a certain time. I should plan to head to bed at..." Grid.Row="0"/>
+				<ListView ItemsSource="{Binding Times}" HasUnevenRows="True" HorizontalOptions="CenterAndExpand" VerticalOptions="FillAndExpand" IsEnabled="False" Grid.Row="1">
+					<ListView.ItemTemplate>
+						<DataTemplate>
+							<ViewCell Height="50">
+								<Label Text="{Binding .}" TextColor="{StaticResource LightBlue}" FontSize="Medium" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+							</ViewCell>
+						</DataTemplate>
+					</ListView.ItemTemplate>
+				</ListView>
+
+				<TimePicker Time="{Binding SelectedTime, Mode=TwoWay}" TextColor="{StaticResource SkyBlue}" VerticalOptions="Start" Grid.Row="2"/>
+			</Grid>
+		</Frame>
+	</ContentPage.Content>
+</ContentPage>
